@@ -6,7 +6,8 @@ from tqdm import tqdm
 
 
 class CABAM(object):
-    def generate_graph(self, n, m, num_classes=2, native_class_probs=[0.5, 0.5], inter_intra_link_probs={1: 0.5, 0: 0.5}):
+    @staticmethod
+    def generate_graph(n, m, num_classes=2, native_class_probs=[0.5, 0.5], inter_intra_link_probs={1: 0.5, 0: 0.5}):
         """
         Main function for CABAM graph generation.
 
@@ -23,7 +24,7 @@ class CABAM(object):
         """
 
         if m < 1 or n < m:
-            raise nx.NetworkXError(
+            raise ValueError(
                 f"Must have m>1 and m<n, m={m},n={n}"
             )
 

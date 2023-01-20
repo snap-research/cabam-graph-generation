@@ -1,6 +1,5 @@
 from collections import Counter
 
-import matplotlib
 import numpy as np
 import scipy.sparse as sp
 from matplotlib import pyplot as plt
