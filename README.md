@@ -1,10 +1,20 @@
 # Scale-Free, Attributed and Class-Assortative Graph Generation
 
-This repository contains code for the paper ["Scale-Free, Attributed and Class-Assortative Graph Generation to Facilitate Introspection of Graph Neural Networks,"](https://nshah.net/publications/CABAM.MLG.2020.pdf) published at KDD MLG 2020.
+This repository contains code for the paper ["Scale-Free, Attributed and Class-Assortative Graph Generation to Facilitate Introspection of Graph Neural Networks,"](https://nshah.net/publications/CABAM.MLG.2020.pdf) published at KDD MLG 2020.  In particular, it enables use of the CABAM (Class Assortative Barabasi Albert Model) for graph generation, which enhances the traditional Barabasi-Albert preferential attachment model with flexible class labels, feature distributions and assortativity (homophily) parameters.
+
+## Installation
+
+You can install a `cabam` package with 
+
+```
+pip install .
+```
 
 ## Downloading Data
 
-Data referenced in our code is sourced from versions available at 
+You can see `./Dataset Summaries.ipynb` for reproducing dataset statistics mentioned in the paper.
+
+Data referenced in this code is sourced from versions available at 
 [graph2gauss](https://github.com/abojchevski/graph2gauss) and 
 [GAug](https://github.com/zhao-tong/GAug) repositories.  
 
@@ -14,16 +24,12 @@ Please run:
 bash download_data.sh
 ```
 
-in order to download all relevant data files referenced in scripts here (all files will be placed under `./data`).
+in order to download all relevant data files referenced in scripts here (all files will be placed under `./data`), before trying to run notebook commands yourself.
 
-## Reproducing dataset statistics from the paper
+## Generating graphs with CABAM
 
-Please see `./Dataset Summaries.ipynb`.
-
-## How to generate graphs
-
-The below is a basic example, to generate a class-assortative Barabasi-Albert graph with 1000 nodes and minimum degree of 3, 
-with two balanced classes (default) and roughly equal homophilous and heterophilous edges (default).
+The below is a basic example, to use CABAM to generate a graph with with 1000 nodes and minimum degree of 3, 
+with two balanced classes (default) and roughly equal numbers of homophilous and heterophilous edges (default).
 
 ```
 from cabam import CABAM
